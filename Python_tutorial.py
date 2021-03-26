@@ -1,7 +1,3 @@
-'''
-print Test
-'''
-
 x = 3
 print(type(x)) # Prints "<class 'int'>"
 print(x)       # Prints "3"
