@@ -109,12 +109,78 @@ print(b)
 
 a[np.arange(4), b] += 10
 print(a)
-'''
 
 import numpy as np
 
-x = np.array([[1,2],[3,4]], dtype=np.float64)
-y = np.array([[5,6],[7,8]], dtype=np.float64)
+# x = np.array([[1,2],[3,4]], dtype=np.float64)
+# y = np.array([[5,6],[7,8]], dtype=np.float64)
 
+# print(x)
+# print(y)
+
+x = np.array([[1,2],[3,4]])
+y = np.array([[5,6],[7,8]])
+v = np.array([9,10])
+w = np.array([11,12])
+
+# print(v.dot(w))
+# print(np.dot(v, w))
+# print(x.dot(v))
+# print(np.dot(x, v))
+# print(x.dot(y))
+# print(np.dot(x, y))
+
+print(np.sum(x))
+print(np.sum(x, axis=0))
+print(np.sum(x, axis=1))
+
+import numpy as np
+
+# x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+# v = np.array([0])
+# y = np.empty_like(x)
+# vv = np.tile(v, (5, 5))
+
+# for i in range(4):
+#     y[i, :] = x[i, :] + v
+
+# print(x)
+# print(y)
+# print(vv)
+
+v = np.array([1,2,3])  # v has shape (3,)
+w = np.array([4,5])
+
+print(np.reshape(v,(3,1))*w)
+'''
+
+import numpy as np
+import matplotlib.image as img
+import matplotlib.pyplot as plt
+
+I = img.imread('C:/Temp/Test.jpg')
+I_tinted = I * [1, 0.95, 0.9] #this leaves the red channel unchanged, and multiplies the green and blue channels by 0.95 and 0.9
+
+plt.subplot(1, 2, 1)
+plt.imshow(I)
+
+
+'''
+import numpy as np
+from scipy.spatial.distance import pdist, squareform
+
+x = np.array([[0, 1], [1, 0], [2, 0]])
 print(x)
-print(y)
+d = squareform(pdist(x, 'euclidean'))
+print(d)
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 3 * np.pi, 0.1)
+y = np.sin(x)
+
+plt.plot(x,y)
+plt.show()
+'''
